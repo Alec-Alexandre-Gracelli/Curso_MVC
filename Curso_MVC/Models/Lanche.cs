@@ -7,7 +7,7 @@ namespace Curso_MVC.Models
     public class Lanche
     {
         [Key]
-        public Guid LancheId { get; set; }
+        public int LancheId { get; set; }
 
         [StringLength(80, MinimumLength = 10, ErrorMessage = "O {0} deve ter no mínimo {1} e no máximo {2}")]
         [Required(ErrorMessage = "O nome do lanche deve ser informado")]
@@ -43,7 +43,7 @@ namespace Curso_MVC.Models
 
         [Display(Name = "Estoque")]
         public bool EmEstoque { get; set; }
-        public Guid CategoriaId { get; set; }
+        public int CategoriaId { get; set; }
         public virtual Categoria Categoria { get; set; }
     }
 }
