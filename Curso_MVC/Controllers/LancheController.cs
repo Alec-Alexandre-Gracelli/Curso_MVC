@@ -15,7 +15,15 @@ namespace Curso_MVC.Controllers
 
         public IActionResult List()
         {
+            ViewData["Título"] = "Todos os lanches";
+            ViewData["Data"] = DateTime.Now;
+
             var lanches = _lancheRepository.Lanches;
+            var totalLanches = lanches.Count();
+
+            ViewBag.Total = "Total de lanches";
+            ViewBag.TotalLanches = totalLanches;
+
             return View(lanches);
         }
     }
