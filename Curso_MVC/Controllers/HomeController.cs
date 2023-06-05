@@ -8,7 +8,6 @@ namespace Curso_MVC.Controllers
     {
         public IActionResult Index()
         {
-            TempData["Nome"] = "Teste";
             return View();
         }
 
