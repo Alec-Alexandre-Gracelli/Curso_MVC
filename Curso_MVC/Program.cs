@@ -1,4 +1,5 @@
 using Curso_MVC.Context;
+using Curso_MVC.Models;
 using Curso_MVC.Repositories;
 using Curso_MVC.Repositories.Interfaces;
 using Microsoft.EntityFrameworkCore;
@@ -14,6 +15,7 @@ builder.Services.AddDbContext<AppDbContext>(options =>
 builder.Services.AddTransient<ILancheRepository, LancheRepository>();
 builder.Services.AddTransient<ICategoriaRepository, CategoriaRepository>();
 builder.Services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
+builder.Services.AddScoped(sp => CarrinhoCompra.GetCarrinho(sp));
 builder.Services.AddMemoryCache();
 builder.Services.AddSession();
 var app = builder.Build();
